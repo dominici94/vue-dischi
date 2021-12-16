@@ -18,6 +18,7 @@ export default {
         img{
             width: 100px;
             padding: 10px 30px;
+            border-radius: 50%;
         }
     }
 </style>
