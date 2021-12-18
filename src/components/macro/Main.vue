@@ -23,7 +23,7 @@ export default {
   data(){
     return{
       discs : [],
-      discsFiltered : []
+      selectGen : ''
     }
   },
   created() {
@@ -31,7 +31,6 @@ export default {
     .then((response) => {
         // handle success
         this.discs = response.data.response;
-        this.discsFiltered = response.data.response;
     })
     .catch(function (error) {
         // handle error
@@ -40,10 +39,18 @@ export default {
   },
   methods : {
     selectGenre(payload){
-      console.log(payload)
-      this.discsFiltered = this.discs.filter( (elm) => {
-        return elm.genre == payload;
-      }); 
+      this.selectGen = payload;
+    }
+  },
+  computed : {
+    discsFiltered(){
+      if(this.selectGen == 'All'){
+        return this.discs;
+      }else{
+        return this.discs.filter( (elm) => {
+          return elm.genre == this.selectGen;
+        });
+      }
     }
   }
 }

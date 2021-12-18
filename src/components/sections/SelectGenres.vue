@@ -2,6 +2,7 @@
   <div class="select-genres">
       <form action="">
           <select v-model="selectVal" name="" id="" @change="$emit('select', selectVal)">
+              <option value="All">All</option>
               <option value="Rock">Rock</option>
               <option value="Pop">Pop</option>
               <option value="Jazz">Jazz</option>
