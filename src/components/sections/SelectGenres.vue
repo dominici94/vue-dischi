@@ -1,13 +1,11 @@
 <template>
   <div class="select-genres">
       <form action="">
-          <select name="" id="" @change.prevent="$emit('select', searchText)">
-              <option value="">All</option>
-              <option value="">Rock</option>
-              <option value="">Pop</option>
-              <option value="">Jazz</option>
-              <option value="">Metal</option>
-
+          <select v-model="selectVal" name="" id="" @change="$emit('select', selectVal)">
+              <option value="Rock">Rock</option>
+              <option value="Pop">Pop</option>
+              <option value="Jazz">Jazz</option>
+              <option value="Metal">Metal</option>
           </select>
       </form>
   </div>
@@ -18,7 +16,7 @@ export default {
     name : 'SelectGenres',
     data(){
         return{
-            searchText : ''
+            selectVal : ''
         }
     }
 

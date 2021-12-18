@@ -1,9 +1,9 @@
 <template>
   <main>
     <div class="container">
-      <SelectGenres @select="selectGenre()"/>
+      <SelectGenres @select="selectGenre"/>
       <div class="discs-list">
-        <DiscCard v-for="(disc, index) in discs" :key="index" :disc="disc"/>
+        <DiscCard v-for="(disc, index) in discsFiltered" :key="index" :disc="disc"/>
       </div>
     </div>
   </main>
@@ -40,9 +40,9 @@ export default {
   },
   methods : {
     selectGenre(payload){
-      // console.log(payload)
+      console.log(payload)
       this.discsFiltered = this.discs.filter( (elm) => {
-        return elm.genre == elm.genre
+        return elm.genre == payload;
       }); 
     }
   }
