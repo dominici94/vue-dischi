@@ -25,5 +25,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/style/partials/variables.scss';
 
+    .select-genres{
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+
+        select{
+            background-color: $primaryColor;
+            color: white;
+            padding: 10px 15px;
+            border: 1px solid $secondaryColor;
+            border-radius: 20px;
+        }
+    }
 </style>
